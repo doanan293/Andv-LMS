@@ -1,4 +1,3 @@
-"use client";
 import { headers } from "next/headers";
 import { LoginForm } from "./_components/LoginForm";
 import { auth } from "@/lib/auth";
