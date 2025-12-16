@@ -5,6 +5,7 @@ import Image from "next/image";
 import { ThemeToggle } from "@/components/ui/themeToggle";
 import { authClient } from "@/lib/auth-client";
 import { buttonVariants } from "@/components/ui/button";
+import { UserDropdown } from "./UserDropdown";
 
 const navigationItems = [
   { name: "Home", href: "/" },
@@ -38,7 +39,7 @@ export default function Navbar() {
           <div className="flex items-center space-x-4">
             <ThemeToggle />
             {isPending ? null : session ? (
-              <p>logged in</p>
+              <UserDropdown />
             ) : (
               <>
                 <Link
