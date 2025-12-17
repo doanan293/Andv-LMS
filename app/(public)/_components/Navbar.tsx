@@ -39,7 +39,11 @@ export default function Navbar() {
           <div className="flex items-center space-x-4">
             <ThemeToggle />
             {isPending ? null : session ? (
-              <UserDropdown />
+              <UserDropdown
+                email={session.user.email}
+                image={session.user.image || ""}
+                name={session.user.name}
+              />
             ) : (
               <>
                 <Link
@@ -49,7 +53,7 @@ export default function Navbar() {
                   Login
                 </Link>
                 <Link href="/login" className={buttonVariants()}>
-                  Login
+                  Get Started
                 </Link>
               </>
             )}
