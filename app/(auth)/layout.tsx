@@ -25,7 +25,13 @@ export default function AuthLayout({
           href="/"
           className="flex items-center gap-2 self-center font-medium"
         >
-          <Image src={Logo} alt="Logo" width={32} height={32} />
+          <Image
+            src={Logo}
+            alt="Logo"
+            width={32}
+            height={32}
+            className="dark:invert"
+          />
           AndvLMS
         </Link>
         {children}
