@@ -62,7 +62,7 @@ export default function CourseCreationPage() {
       smallDescription: "",
     },
   });
-  //2. Define a submit handler
+  //Define a submit handler
   function onSubmit(values: CourseSchemaType) {
     startTransition(async () => {
       const { data: result, error } = await tryCatch(CreateCourse(values));
