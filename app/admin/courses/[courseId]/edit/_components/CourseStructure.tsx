@@ -91,16 +91,21 @@ export function CourseStructure({ data }: iAppProps) {
     );
   }
 
-  function handleDragEnd(event: any) {
+  function handleDragEnd(event) {
     const { active, over } = event;
-    console.log("drag end", event);
-    if (active.id !== over.id) {
-      setItems((items) => {
-        const oldIndex = items.indexOf(active.id);
-        const newIndex = items.indexOf(over.id);
 
-        return arrayMove(items, oldIndex, newIndex);
-      });
+    if (!over || active.id === over.id) {
+      return;
+    }
+
+    const activeId = active.id;
+    const overId = over.id;
+    const activeType = active.data.current?.type as "chapter" | "lesson";
+    const overType = over.data.current?.type as "chapter" | "lesson";
+    const courseId = data.id;
+
+    if (activeType === "chapter") {
+      const targetChapterId = null;
     }
   }
 
